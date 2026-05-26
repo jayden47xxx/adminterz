@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>AdMinterz — Support</title>
+<meta name="robots" content="index, follow"/>
+<meta name="monetag" content="d55254b1a71d7e658159a960af6adfd6"/>
+<link rel="canonical" href="https://adminterz.netlify.app/pages/contact.html"/>
+<script async src="https://alwingulla.com/88/tag.min.js" data-zone="d55254b1a71d7e658159a960af6adfd6" onerror="console.warn('Monetag: ad blocked or unavailable')"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<div class="app">
+  <div class="app-header">
+    <button class="header-icon" onclick="history.back()">
+      <i class="ti ti-arrow-left" style="color:var(--text);font-size:20px"></i>
+    </button>
+    <span class="header-logo">Support</span>
+    <div style="width:36px"></div>
+  </div>
+  <div class="scrollable" style="padding:16px">
+    <div style="background:var(--card);border-radius:var(--radius);border:0.5px solid var(--border);padding:16px;margin-bottom:16px">
+      <div style="font-family:var(--font-display);font-size:10px;font-weight:700;margin-bottom:13px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase">CONTACT US</div>
+      <div class="info-row"><span class="lbl"><i class="ti ti-mail"></i> Email</span><span class="val" style="color:var(--accent2)">support@adminterz.app</span></div>
+      <div class="info-row"><span class="lbl"><i class="ti ti-brand-telegram"></i> Telegram</span><span class="val" style="color:var(--accent2)">@AdMinterzSupport</span></div>
+      <div class="info-row"><span class="lbl"><i class="ti ti-clock"></i> Response time</span><span class="val">Within 24 hours</span></div>
+    </div>
+    <div class="field">
+      <label>Your message</label>
+      <textarea id="msg" placeholder="Describe your issue..." style="width:100%;background:var(--bg3);border:0.5px solid var(--border2);border-radius:var(--radius-sm);padding:13px 15px;color:var(--text);font-size:14px;outline:none;font-family:var(--font-body);min-height:130px;resize:vertical;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border2)'"></textarea>
+    </div>
+    <button class="submit-btn" onclick="sendMsg()">Send Message</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function sendMsg(){
+  const m = document.getElementById('msg').value.trim();
+  if (!m){
+    const t=document.getElementById('toast'); t.textContent='Write your message first'; t.className='toast err'; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2800); return;
+  }
+  const t=document.getElementById('toast'); t.textContent="Message sent! We'll reply within 24h"; t.className='toast'; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+  document.getElementById('msg').value='';
+}
+</script>
+</body>
+</html>

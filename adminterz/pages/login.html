@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>AdMinterz Sign In — Watch Ads Earn Money Platform</title>
+<meta name="description" content="Sign in to your AdMinterz account. Watch daily ads, track your points and withdraw earnings in USDT or Bitcoin."/>
+<meta name="robots" content="noindex, follow"/>
+<meta name="monetag" content="d55254b1a71d7e658159a960af6adfd6"/>
+<link rel="canonical" href="https://adminterz.netlify.app/pages/login.html"/>
+
+<!-- Monetag -->
+<script async src="https://alwingulla.com/88/tag.min.js" data-zone="d55254b1a71d7e658159a960af6adfd6" onerror="console.warn('Monetag: ad blocked or unavailable')"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+.auth-bg-glow {
+  position: fixed;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(14,165,233,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+</style>
+</head>
+<body>
+<div class="auth-bg-glow"></div>
+<div class="auth-wrap" style="position:relative;z-index:1">
+  <div class="auth-logo">AdMinterz</div>
+  <div class="auth-tagline">Watch ads. Earn real money. Worldwide.</div>
+  <div class="auth-card">
+    <h2>Welcome back</h2>
+    <div class="auth-sub">Sign in to your account</div>
+    <div class="field">
+      <label>Email address</label>
+      <input type="email" id="login-email" placeholder="you@email.com"/>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="login-pass" placeholder="Your password"/>
+    </div>
+    <button class="submit-btn blue" onclick="doLogin()">Sign In</button>
+    <div style="text-align:right;margin-top:13px">
+      <a href="#" style="font-size:13px;color:var(--accent2)">Forgot password?</a>
+    </div>
+  </div>
+  <div class="auth-footer">New here? <a href="signup.html">Create account</a></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function doLogin(){
+  const e = document.getElementById('login-email').value.trim();
+  const p = document.getElementById('login-pass').value;
+  if (!e || !p) { showToast('Enter email and password', true); return; }
+  showToast('Signing in...');
+  setTimeout(() => { window.location = '../dashboard.html'; }, 1200);
+}
+function showToast(msg, err=false){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (err ? ' err' : '');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>

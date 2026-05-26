@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>Join AdMinterz — Start Earning Money by Watching Ads Worldwide</title>
+<meta name="description" content="Sign up for AdMinterz — the worldwide ad-reward platform. One-time $5 membership unlocks daily ad sessions. Earn points, withdraw to USDT or Bitcoin globally."/>
+<meta name="keywords" content="join AdMinterz, earn money watching ads, sign up earn crypto, ad reward platform signup, get paid to watch ads, earn USDT online"/>
+<meta name="robots" content="index, follow"/>
+<meta name="monetag" content="d55254b1a71d7e658159a960af6adfd6"/>
+<link rel="canonical" href="https://adminterz.netlify.app/pages/signup.html"/>
+<meta property="og:title" content="Join AdMinterz — Earn Real Money Watching Ads"/>
+<meta property="og:description" content="Create your AdMinterz account. Watch ads daily, earn points, withdraw worldwide in crypto."/>
+<meta property="og:url" content="https://adminterz.netlify.app/pages/signup.html"/>
+<meta name="google-site-verification" content="google7a173b5f13332b27"/>
+
+<!-- Monetag -->
+<script async src="https://alwingulla.com/88/tag.min.js" data-zone="d55254b1a71d7e658159a960af6adfd6" onerror="console.warn('Monetag: ad blocked or unavailable')"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-logo">AdMinterz</div>
+  <div class="auth-tagline">Watch ads. Earn points. Withdraw worldwide.</div>
+
+  <div class="auth-card">
+    <div class="step-indicator">
+      <div class="step active" id="step1-dot">1</div>
+      <div class="step-line" id="line1"></div>
+      <div class="step" id="step2-dot">2</div>
+      <div class="step-line" id="line2"></div>
+      <div class="step" id="step3-dot">3</div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div id="step1">
+      <h2>Create account</h2>
+      <div class="auth-sub">Step 1 of 3 — Your details</div>
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" id="reg-name" placeholder="John Doe"/>
+      </div>
+      <div class="field">
+        <label>Email address</label>
+        <input type="email" id="reg-email" placeholder="you@email.com"/>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="reg-pass" placeholder="Min 8 characters"/>
+      </div>
+      <div class="field">
+        <label>Referral code (optional)</label>
+        <input type="text" id="reg-ref" placeholder="Leave blank if none"/>
+      </div>
+      <button class="submit-btn" onclick="goStep2()">Continue →</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" style="display:none">
+      <h2>Choose your plan</h2>
+      <div class="auth-sub">Step 2 of 3 — One-time membership access fee</div>
+      <div class="notice-info" style="margin-bottom:16px">
+        This is a one-time platform access fee, not an investment. Your earnings come from watching ads — payouts are funded by real ad revenue via Monetag.
+      </div>
+      <div class="withdraw-method" onclick="selectPlan('starter',this)" id="plan-starter">
+        <div class="w-method-icon" style="background:rgba(16,185,129,0.12);font-size:20px">🌱</div>
+        <div>
+          <div class="w-method-name">Starter — $5</div>
+          <div class="w-method-sub">10 ads/day · 5 pts each · withdraw at $5</div>
+        </div>
+      </div>
+      <div class="withdraw-method" onclick="selectPlan('booster',this)" id="plan-booster">
+        <div class="w-method-icon" style="background:rgba(245,158,11,0.12);font-size:20px">⚡</div>
+        <div>
+          <div class="w-method-name">Booster — $15</div>
+          <div class="w-method-sub">25 ads/day · 6 pts each · withdraw at $5</div>
+        </div>
+      </div>
+      <div class="withdraw-method" onclick="selectPlan('pro',this)" id="plan-pro">
+        <div class="w-method-icon" style="background:rgba(14,165,233,0.12);font-size:20px">💎</div>
+        <div>
+          <div class="w-method-name">Pro — $30</div>
+          <div class="w-method-sub">50 ads/day · 8 pts each · withdraw at $5</div>
+        </div>
+      </div>
+      <button class="submit-btn" onclick="goStep3()" style="margin-top:8px">Pay &amp; Continue →</button>
+      <button onclick="goStep1Back()" style="width:100%;margin-top:10px;padding:12px;background:none;border:1px solid var(--border2);border-radius:var(--radius-sm);color:var(--muted);font-size:13px;cursor:pointer;font-family:var(--font-body)">← Back</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="step3" style="display:none">
+      <h2>Pay membership fee</h2>
+      <div class="auth-sub" id="pay-sub">Step 3 of 3 — Pay $5 to activate your account</div>
+
+      <div style="display:flex;gap:10px;margin-bottom:16px">
+        <div class="withdraw-method" onclick="selectPayMethod('usdt',this)" style="flex:1;margin-bottom:0" id="pay-usdt">
+          <div class="w-method-icon" style="background:rgba(99,102,241,0.12);width:32px;height:32px">
+            <i class="ti ti-currency-dollar" style="color:#818cf8;font-size:16px"></i>
+          </div>
+          <div>
+            <div class="w-method-name" style="font-size:13px">USDT</div>
+            <div class="w-method-sub">ERC-20</div>
+          </div>
+        </div>
+        <div class="withdraw-method" onclick="selectPayMethod('btc',this)" style="flex:1;margin-bottom:0" id="pay-btc">
+          <div class="w-method-icon" style="background:rgba(245,158,11,0.12);width:32px;height:32px">
+            <i class="ti ti-currency-bitcoin" style="color:var(--gold2);font-size:16px"></i>
+          </div>
+          <div>
+            <div class="w-method-name" style="font-size:13px">Bitcoin</div>
+            <div class="w-method-sub">BTC</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pay-usdt-section">
+        <div class="network-tag tag-erc"><i class="ti ti-shield-check"></i> ERC-20 Network</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:6px">Send exact amount to this address:</div>
+        <div class="addr-box" id="usdt-addr">Loading address...</div>
+        <button class="copy-btn" onclick="copyAddr('usdt')"><i class="ti ti-copy"></i> Copy USDT Address</button>
+      </div>
+
+      <div id="pay-btc-section" style="display:none">
+        <div class="network-tag tag-btc"><i class="ti ti-currency-bitcoin"></i> Bitcoin Network</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:6px">Send exact amount to this address:</div>
+        <div class="addr-box" id="btc-addr">Loading address...</div>
+        <button class="copy-btn" onclick="copyAddr('btc')"><i class="ti ti-copy"></i> Copy BTC Address</button>
+      </div>
+
+      <div class="notice">
+        ⚠️ Send only the exact membership amount. After sending, paste your transaction hash below and submit — your account will be activated within 30 minutes after blockchain confirmation.
+      </div>
+
+      <div class="field">
+        <label>Transaction hash / TX ID</label>
+        <input type="text" id="tx-hash" placeholder="Paste your transaction hash"/>
+      </div>
+
+      <button class="submit-btn" onclick="submitRegistration()">Submit &amp; Activate Account</button>
+      <button onclick="goStep2Back()" style="width:100%;margin-top:10px;padding:12px;background:none;border:1px solid var(--border2);border-radius:var(--radius-sm);color:var(--muted);font-size:13px;cursor:pointer;font-family:var(--font-body)">← Back</button>
+    </div>
+  </div>
+
+  <div class="auth-footer">Already a member? <a href="login.html">Sign in</a></div>
+  <div class="auth-footer" style="margin-top:8px">
+    <a href="terms.html" style="color:var(--muted)">Terms of Service</a>
+    &nbsp;·&nbsp;
+    <a href="contact.html" style="color:var(--muted)">Support</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const USDT_ADDR = '0x14623697ae5c43a56b980965c527d2ed7023f387';
+const BTC_ADDR  = '14Ra2Z9igujCZCsMYs9XZt8J4zBpxoggaZ';
+let chosenPlan = 'starter';
+let payMethod  = 'usdt';
+const planFees = { starter:'$5.00', booster:'$15.00', pro:'$30.00' };
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('usdt-addr').textContent = USDT_ADDR;
+  document.getElementById('btc-addr').textContent  = BTC_ADDR;
+  const ref = new URLSearchParams(window.location.search).get('ref');
+  if (ref) document.getElementById('reg-ref').value = ref;
+});
+
+function selectPlan(plan, el){
+  chosenPlan = plan;
+  document.querySelectorAll('#step2 .withdraw-method').forEach(m => m.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectPayMethod(method, el){
+  payMethod = method;
+  document.querySelectorAll('#step3 .withdraw-method').forEach(m => m.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('pay-usdt-section').style.display = method === 'usdt' ? 'block' : 'none';
+  document.getElementById('pay-btc-section').style.display  = method === 'btc'  ? 'block' : 'none';
+}
+
+function goStep2(){
+  const name = document.getElementById('reg-name').value.trim();
+  const email= document.getElementById('reg-email').value.trim();
+  const pass = document.getElementById('reg-pass').value;
+  if (!name || !email || !pass){ showToast('Fill all required fields', true); return; }
+  if (pass.length < 8){ showToast('Password must be 8+ characters', true); return; }
+  document.getElementById('step1').style.display='none';
+  document.getElementById('step2').style.display='block';
+  document.getElementById('step1-dot').className='step done';
+  document.getElementById('step1-dot').innerHTML='<i class="ti ti-check" style="font-size:12px"></i>';
+  document.getElementById('line1').className='step-line done';
+  document.getElementById('step2-dot').className='step active';
+}
+function goStep1Back(){
+  document.getElementById('step2').style.display='none';
+  document.getElementById('step1').style.display='block';
+  document.getElementById('step1-dot').className='step active';
+  document.getElementById('step1-dot').textContent='1';
+  document.getElementById('line1').className='step-line';
+  document.getElementById('step2-dot').className='step';
+}
+function goStep3(){
+  if (!chosenPlan){ showToast('Select a plan', true); return; }
+  document.getElementById('pay-sub').textContent='Step 3 of 3 — Pay '+planFees[chosenPlan]+' to activate';
+  document.getElementById('step2').style.display='none';
+  document.getElementById('step3').style.display='block';
+  document.getElementById('step2-dot').className='step done';
+  document.getElementById('step2-dot').innerHTML='<i class="ti ti-check" style="font-size:12px"></i>';
+  document.getElementById('line2').className='step-line done';
+  document.getElementById('step3-dot').className='step active';
+  document.getElementById('pay-usdt').classList.add('selected');
+}
+function goStep2Back(){
+  document.getElementById('step3').style.display='none';
+  document.getElementById('step2').style.display='block';
+  document.getElementById('step2-dot').className='step active';
+  document.getElementById('step2-dot').textContent='2';
+  document.getElementById('line2').className='step-line';
+  document.getElementById('step3-dot').className='step';
+}
+function copyAddr(method){
+  const addr = method === 'usdt' ? USDT_ADDR : BTC_ADDR;
+  navigator.clipboard.writeText(addr).catch(() => {});
+  showToast('Address copied!');
+}
+function submitRegistration(){
+  const hash = document.getElementById('tx-hash').value.trim();
+  if (!hash){ showToast('Paste your transaction hash', true); return; }
+  showToast('Submitted! Activating within 30 minutes...');
+  setTimeout(() => { window.location = '../dashboard.html'; }, 2500);
+}
+function showToast(msg, err=false){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (err ? ' err' : '');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>

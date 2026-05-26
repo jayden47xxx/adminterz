@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>AdMinterz — Transactions</title>
+<meta name="robots" content="noindex"/>
+<meta name="monetag" content="d55254b1a71d7e658159a960af6adfd6"/>
+<script async src="https://alwingulla.com/88/tag.min.js" data-zone="d55254b1a71d7e658159a960af6adfd6" onerror="console.warn('Monetag: ad blocked or unavailable')"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<div class="app">
+  <div class="app-header">
+    <button class="header-icon" onclick="history.back()">
+      <i class="ti ti-arrow-left" style="color:var(--text);font-size:20px"></i>
+    </button>
+    <span class="header-logo">Transactions</span>
+    <div style="width:36px"></div>
+  </div>
+  <div class="scrollable" style="padding:16px">
+
+    <div style="display:flex;gap:8px;margin-bottom:17px;flex-wrap:wrap">
+      <button class="filter-btn active" onclick="filter('all',this)">All</button>
+      <button class="filter-btn" onclick="filter('earn',this)">Earnings</button>
+      <button class="filter-btn" onclick="filter('withdraw',this)">Withdrawals</button>
+    </div>
+
+    <div id="tx-full-list"></div>
+  </div>
+</div>
+
+<script>
+const ALL_TX = [
+  {type:'earn',    label:'Ad watched — 5 pts',         date:'Today 14:32',  display:'+5 pts',   status:'done'},
+  {type:'earn',    label:'Ad watched — 5 pts',         date:'Today 13:10',  display:'+5 pts',   status:'done'},
+  {type:'withdraw',label:'Withdrawal — USDT',          date:'22/05/2026',   display:'-$5.00',   status:'done'},
+  {type:'earn',    label:'Referral bonus — 500 pts',   date:'20/05/2026',   display:'+500 pts', status:'done'},
+  {type:'earn',    label:'Ad watched — 5 pts',         date:'20/05/2026',   display:'+5 pts',   status:'done'},
+  {type:'withdraw',label:'Withdrawal — USDT',          date:'10/05/2026',   display:'-$5.00',   status:'done'},
+  {type:'earn',    label:'Ad watched — 5 pts',         date:'09/05/2026',   display:'+5 pts',   status:'done'},
+  {type:'earn',    label:'Ad watched — 5 pts',         date:'08/05/2026',   display:'+5 pts',   status:'done'},
+  {type:'withdraw',label:'Withdrawal — BTC (pending)', date:'07/05/2026',   display:'-$10.00',  status:'pending'},
+  {type:'earn',    label:'Referral bonus — 500 pts',   date:'01/05/2026',   display:'+500 pts', status:'done'},
+];
+
+let current = 'all';
+
+function filter(type, el){
+  current = type;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function render(){
+  const list = current === 'all' ? ALL_TX : ALL_TX.filter(t => t.type === current);
+  const el = document.getElementById('tx-full-list');
+  if (!list.length){
+    el.innerHTML = '<div style="text-align:center;padding:44px 0;color:var(--muted);font-size:13px">No transactions</div>';
+    return;
+  }
+  el.innerHTML = list.map(tx => `
+    <div class="tx-item" style="margin-bottom:8px">
+      <div class="tx-left">
+        <div class="tx-icon" style="background:${tx.type==='earn'?'rgba(16,185,129,0.12)':'rgba(14,165,233,0.12)'}">
+          <i class="ti ${tx.type==='earn'?'ti-eye':'ti-arrow-up'}"
+             style="font-size:16px;color:${tx.type==='earn'?'var(--mint2)':'var(--accent2)'}"></i>
+        </div>
+        <div>
+          <div class="tx-name">${tx.label}</div>
+          <div class="tx-date">${tx.date} · <span class="status-pill ${tx.status==='done'?'pill-done':'pill-pending'}">${tx.status}</span></div>
+        </div>
+      </div>
+      <div class="tx-amount" style="color:${tx.type==='earn'?'var(--mint2)':'var(--gold2)'}">${tx.display}</div>
+    </div>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded', render);
+</script>
+</body>
+</html>

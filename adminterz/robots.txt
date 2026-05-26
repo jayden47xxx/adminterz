@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Block private user pages
+Disallow: /pages/profile.html
+Disallow: /pages/transactions.html
+Disallow: /dashboard.html
+Disallow: /dashboard/
+
+# Allow all public pages
+Allow: /pages/signup.html
+Allow: /pages/login.html
+Allow: /pages/contact.html
+Allow: /pages/terms.html
+Allow: /pages/privacy.html
+Allow: /index.html
+Allow: /
+
+# Crawl delay
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://adminterz.netlify.app/sitemap.xml

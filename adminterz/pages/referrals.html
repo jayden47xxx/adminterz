@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>AdMinterz — Referrals</title>
+<meta name="robots" content="noindex"/>
+<meta name="monetag" content="d55254b1a71d7e658159a960af6adfd6"/>
+<script async src="https://alwingulla.com/88/tag.min.js" data-zone="d55254b1a71d7e658159a960af6adfd6" onerror="console.warn('Monetag: ad blocked or unavailable')"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<div class="app">
+  <div class="app-header">
+    <button class="header-icon" onclick="history.back()">
+      <i class="ti ti-arrow-left" style="color:var(--text);font-size:20px"></i>
+    </button>
+    <span class="header-logo">Referrals</span>
+    <div style="width:36px"></div>
+  </div>
+  <div class="scrollable" style="padding:16px">
+
+    <div style="background:linear-gradient(135deg,rgba(14,165,233,0.1),rgba(16,185,129,0.08));border:0.5px solid rgba(14,165,233,0.2);border-radius:var(--radius);padding:22px;text-align:center;margin-bottom:16px">
+      <div style="font-family:var(--font-display);font-size:40px;font-weight:800;color:var(--mint2);letter-spacing:-1px">3</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px">Friends referred</div>
+      <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--gold2);margin-top:9px">1,500 pts earned from referrals</div>
+    </div>
+
+    <div style="background:var(--card);border-radius:var(--radius);border:0.5px solid var(--border);padding:16px;margin-bottom:16px">
+      <div style="font-family:var(--font-display);font-size:13px;font-weight:700;margin-bottom:9px">Your referral link</div>
+      <div class="referral-link" onclick="copyRef()" style="margin-bottom:11px">adminterz.netlify.app/pages/signup.html?ref=JohnDemo</div>
+      <button class="submit-btn" onclick="copyRef()"><i class="ti ti-copy"></i> Copy Link</button>
+    </div>
+
+    <div class="notice-info">Earn 500 pts ($0.50) for every friend who joins AdMinterz and activates their account. No limit on referrals.</div>
+
+    <div class="sec-head" style="margin:16px 0 11px"><h2>REFERRED MEMBERS</h2></div>
+
+    <div class="tx-item" style="margin-bottom:8px">
+      <div class="tx-left">
+        <div class="tx-icon" style="background:rgba(16,185,129,0.12)">
+          <i class="ti ti-user" style="font-size:16px;color:var(--mint2)"></i>
+        </div>
+        <div>
+          <div class="tx-name">Alice M.</div>
+          <div class="tx-date">Joined 20/05/2026 · <span style="color:var(--mint2)">active</span></div>
+        </div>
+      </div>
+      <div class="tx-amount" style="color:var(--mint2)">+500 pts</div>
+    </div>
+
+    <div class="tx-item" style="margin-bottom:8px">
+      <div class="tx-left">
+        <div class="tx-icon" style="background:rgba(16,185,129,0.12)">
+          <i class="ti ti-user" style="font-size:16px;color:var(--mint2)"></i>
+        </div>
+        <div>
+          <div class="tx-name">Robert K.</div>
+          <div class="tx-date">Joined 15/05/2026 · <span style="color:var(--mint2)">active</span></div>
+        </div>
+      </div>
+      <div class="tx-amount" style="color:var(--mint2)">+500 pts</div>
+    </div>
+
+    <div class="tx-item" style="margin-bottom:8px">
+      <div class="tx-left">
+        <div class="tx-icon" style="background:rgba(16,185,129,0.12)">
+          <i class="ti ti-user" style="font-size:16px;color:var(--mint2)"></i>
+        </div>
+        <div>
+          <div class="tx-name">Grace N.</div>
+          <div class="tx-date">Joined 01/05/2026 · <span style="color:var(--mint2)">active</span></div>
+        </div>
+      </div>
+      <div class="tx-amount" style="color:var(--mint2)">+500 pts</div>
+    </div>
+
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function copyRef(){
+  navigator.clipboard.writeText('https://adminterz.netlify.app/pages/signup.html?ref=JohnDemo').catch(()=>{});
+  const t = document.getElementById('toast');
+  t.textContent = 'Referral link copied!';
+  t.className = 'toast';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+</script>
+</body>
+</html>
